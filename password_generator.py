@@ -1,25 +1,19 @@
 import string
 import random
 
-
-
-
 user_input = int(input("Enter your password lenght : "))
 
 def password_generator(lenght):
-
-	letter = string.ascii_letters
-	digit = string.digits
-	symbol = string.punctuation
-	array = list(letter + digit + symbol)
-	password = []
+	letters = string.ascii_letters
+	digits = string.digits
+	symbols = string.punctuation
+	char_pool = list(letters + digits + symbols)
+	password = ''
 	
 	for i in range(lenght):
-		random_char = random.choice(array)
-		password.append(random_char)
+		random_char = random.choice(char_pool)
+		password += random_char
 	
-	new_password = "".join(password)
-	print(new_password)
-
+	print(password)
 
 password_generator(user_input)
